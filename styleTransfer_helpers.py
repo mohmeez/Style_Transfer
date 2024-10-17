@@ -18,7 +18,7 @@ def load_image(image_path, max_size=400):
         transforms.ToTensor(),
         transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])  # Normalize with ImageNet mean and std
     ])
-    
+
     # Apply transformations and add a batch dimension for compatibility with the model
     image = transformations(image).unsqueeze(0)
     return image.to(device)
@@ -113,7 +113,7 @@ def run_style_transfer(model, content_losses, style_losses, input_image, num_ste
             style_score = sum([sl.loss for sl in style_losses])
 
             # Adjust style weight and compute total loss
-            total_loss = content_score + (style_score * 1e1)
+            total_loss = content_score + (style_score * 1e2)
             total_loss.backward()  # Backpropagate the loss
 
             run[0] += 1  # Increment step count
