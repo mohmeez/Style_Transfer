@@ -40,8 +40,8 @@ streamlit==1.39.0
 sympy==1.13.1
 tenacity==9.0.0
 toml==0.10.2
-torch==2.2.0+cpu
-torchaudio==2.2.0+cpu
+torch==2.5.0+cpu
+torchaudio==2.5.0+cpu
 torchvision==0.20.0+cpu
 tornado==6.4.1
 typing_extensions==4.12.2
